@@ -1,0 +1,9 @@
+sudo docker run -d \
+  --name jellyfin \
+  --user $(id -u):$(id -g) \
+  --volume /srv/jellyfin/config:/config \
+  --volume /srv/jellyfin/cache:/cache \
+  --volume /srv/jellyfin/media:/media \
+  --publish 8096:8096 \
+  --restart unless-stopped \
+  jellyfin/jellyfin
